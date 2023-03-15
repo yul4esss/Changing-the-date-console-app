@@ -14,15 +14,6 @@ namespace Lab1
             {
                 return day;
             }
-            set
-            {
-                day = value;
-                if (value < 0 || value > 31)
-                {
-                    Console.WriteLine("The day can't be less than 0 or more than 31");
-                    Environment.Exit(0);
-                }
-            }
         }
         public int Month {
             get
@@ -38,8 +29,6 @@ namespace Lab1
                     Environment.Exit(0);
                 }
             }
-        }
-        public int Year {
 
             get
             {
@@ -56,36 +45,12 @@ namespace Lab1
             }
         }
 
-        public Date()
-        {
-            Console.WriteLine("Welcome to my program, please, enter the date you want");
-        }
-
         public Date(int day, int month, int year)
         {
             this.day = day;
             this.month = month;
             this.year = year;
-            Console.Write("The date is: ");
-            try
-            {
-                if (this.day > 31 || this.day < 0)
-                {
-                    Console.WriteLine("This date is not valid");
-                } else if (this.month == 2 && this.day > 29)
-                {
-                    Console.WriteLine("It's February, it doesn't have more than 30 days");
-                } else if (this.year > 2023 || this.year < 0)
-                {
-                    Console.WriteLine("Year value cannot be negative");
-                }
-            }
-            catch (Exception)
-            { 
-            }
         }
-
-
 
         public void ShowDate()
         {
@@ -95,15 +60,6 @@ namespace Lab1
             {
                 Console.WriteLine("The date is: {0}.0{1}.{2}", day, month, year);
             }
-            else if (day < 10 && month > 9)
-            {
-                Console.WriteLine("The date is: 0{0}.{1}.{2}", day, month, year);
-            }
-            else
-            {
-                Console.WriteLine("The date is: {0}.{1}.{2}", day, month, year);
-            }
-        }
 
         public void DayChange()
         {
@@ -118,12 +74,6 @@ namespace Lab1
                     Console.WriteLine("The value is not correct, please, try again");
                     Environment.Exit(0);
                 }
-            }
-            catch (FormatException)
-            {
-                Console.WriteLine("Incorrect input type, please, try again");
-                Environment.Exit(0);
-            }
             
             if (newDay < 10)
                 Console.WriteLine("The new date is: 0{0}.0{1}.{2}", newDay, month, year);

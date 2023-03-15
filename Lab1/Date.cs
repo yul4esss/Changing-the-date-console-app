@@ -187,16 +187,5 @@ namespace Lab1
                 Environment.Exit(0);
             }
 
-            if (day < 10 && month < 10)
-                Console.WriteLine("The new date is: 0{0}.0{1}.{2}", day, month, newYear);
-            else if (day > 10 && month < 10)
-                Console.WriteLine("The new date is: {0}.0{1}.{2}", day, month, newYear);
-            else if (day < 9 && (month > 9 && month < 13))
-                Console.WriteLine("The new date is: 0{0}.{1}.{2}", day, month, newYear);
-            else if (day > 9 && (month > 9 && month < 13))
-                Console.WriteLine("The new date is: {0}.{1}.{2}", day, month, newYear);
-            else
-                Console.WriteLine("Something went wrong");
-        }
     }
 }
